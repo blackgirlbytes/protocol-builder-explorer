@@ -1,5 +1,11 @@
-import "@/styles/globals.css";
+import { ProtocolProvider } from '@/context/ProtocolContext';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return (
+    <ProtocolProvider>
+      <Component {...pageProps} />
+    </ProtocolProvider>
+  );
 }
+
+export default MyApp;
